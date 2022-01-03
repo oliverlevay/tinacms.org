@@ -2,8 +2,10 @@
 title: List Field
 prev: /docs/reference/toolkit/fields/tags
 next: /docs/reference/toolkit/fields/group
-consumes:
+consumes: null
+last_edited: '2022-01-03T23:54:51.780Z'
 ---
+_Not to be confused with the [list property option](/docs/reference/list-property-explanation/)_
 
 The **List Field** represents an array of [primitive](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) values — specifically strings or numbers.
 
@@ -31,15 +33,15 @@ interface ListFieldDefinititon extends Field {
 }
 ```
 
-| Option        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `component`   | The name of the plugin component. Always `'list'`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `name`        | The path to some value in the data being edited.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `field`       | The [`field`](/docs/reference/toolkit/fields) that will render to edit each list item. Component Options: 'text', 'textarea', 'number', or 'select'                                                                                                                                                                                                                                                                                                                                                                         |
-| `label`       | A human readable label for the field. Defaults to the `name`. _(Optional)_                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `description` | Description that expands on the purpose of the field or prompts a specific action. _(Optional)_                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `defaultItem` | Provides the `list` items with default data upon being created. Returns an empty string if no value is provided. _(Optional)_                                                                                                                                                                                                                                                                                                                                                                                               |
-| `itemProps`   | A function that generates `props` for each list item. It takes the item as an argument. _(Optional)_ <br><br> It returns an object containing, `key`: This property is used to optimize the rendering of lists. If rendering is causing problems, use `defaultItem` to generate a new key, as is seen in [this example](http://tinacms.org/docs/reference/toolkit/fields/group-list#definition). Feel free to reference the [React documentation](https://reactjs.org/docs/lists-and-keys.html) for more on keys and lists. |
+| Option | Description |
+| --- | --- |
+| `component` | The name of the plugin component. Always `'list'`. |
+| `name` | The path to some value in the data being edited. |
+| `field` | The [`field`](/docs/reference/toolkit/fields) that will render to edit each list item. Component Options: 'text', 'textarea', 'number', or 'select' |
+| `label` | A human readable label for the field. Defaults to the `name`. _(Optional)_ |
+| `description` | Description that expands on the purpose of the field or prompts a specific action. _(Optional)_ |
+| `defaultItem` | Provides the `list` items with default data upon being created. Returns an empty string if no value is provided. _(Optional)_ |
+| `itemProps` | A function that generates `props` for each list item. It takes the item as an argument. _(Optional)_ <br><br> It returns an object containing, `key`: This property is used to optimize the rendering of lists. If rendering is causing problems, use `defaultItem` to generate a new key, as is seen in [this example](http://tinacms.org/docs/reference/toolkit/fields/group-list#definition). Feel free to reference the [React documentation](https://reactjs.org/docs/lists-and-keys.html) for more on keys and lists. |
 
 > This interface only shows the keys unique to the list field.
 >
@@ -63,7 +65,6 @@ lunch_menu:
   - Falafel
   - Sliders
 ---
-
 ```
 
 Our `list` field config could look like this:
